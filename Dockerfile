@@ -30,13 +30,11 @@
 
 FROM debian:stretch-slim
 
-LABEL maintainer="Juliano Petronetto <juliano@petronetto.com.br>" \
-      name="Docker Python Deep Learning" \
+LABEL maintainer="Sebastiano Milardo <milardo@mit.edu>" \
+      name="Docker Python Deep Learning + GEO" \
       description="Docker container for Python Deep Learning, with almost everything that you may need." \
-      url="https://hub.docker.com/r/petronetto/docker-python-deep-learning" \
       vcs-url="https://github.com/petronetto/docker-python-deep-learning" \
-      vendor="Petronetto DevTech" \
-      version="1.1"
+      version="0.1"
 
 ENV BUILD_PACKAGES="\
         build-essential \
@@ -83,10 +81,11 @@ ENV BUILD_PACKAGES="\
         matplotlib \
         jupyter \
         xgboost \
-        tensorflow \
+        tf-nightly \
         keras \
-        https://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64.whl \
-        https://download.pytorch.org/whl/cpu/torchvision-0.3.0-cp36-cp36m-linux_x86_64.whl \
+        geopandas \
+        osmnx \
+        sklearn \
         mxnet-mkl" \
     PYTHON_VER=3.6.8 \
     JUPYTER_CONFIG_DIR=/home/.ipython/profile_default/startup \
