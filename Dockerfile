@@ -130,8 +130,7 @@ RUN set -ex; \
 
 WORKDIR /home/notebooks
 
-
-
+COPY shared /home/notebooks/shared 
 
 EXPOSE 8888
 
