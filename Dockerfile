@@ -64,6 +64,8 @@ ENV BUILD_PACKAGES="\
         libpng16-16 \
         libfreetype6 \
         libjpeg62-turbo \
+        libspatialindex-dev \
+	libbz2-dev \
         libgomp1" \
     PIP_PACKAGES="\
         pyyaml \
@@ -127,6 +129,9 @@ RUN set -ex; \
     echo "c.NotebookApp.token = u''" | tee -a ${JUPYTER_CONFIG_DIR}/config.py
 
 WORKDIR /home/notebooks
+
+
+
 
 EXPOSE 8888
 
